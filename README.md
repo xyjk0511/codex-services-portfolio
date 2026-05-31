@@ -11,7 +11,10 @@ https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service
 
 ## Available Services
 
-- CSV and Excel automation: typical small scope $50-$150
+- CSV Reconciliation Starter Kit: $19 list price, $9 launch option
+- Express CSV audit: $79 fixed diagnostic
+- CSV reconciliation cleanup sprint: $199 fixed small scope
+- CSV and Excel automation: typical custom scope $50-$150
 - Codex repo readiness audit: $99 audit, $249 setup, $499 workflow
 - Bug fix, test repair, and PR review: $79 triage, $199+ one-flow rescue
 - Small chatbot or RAG prototypes from provided content: $99 audit, $250+ prototype
@@ -41,6 +44,8 @@ repository.
   https://xyjk0511.github.io/codex-services-portfolio/cases/proof-index.html
 - Copy-paste request briefs:
   https://xyjk0511.github.io/codex-services-portfolio/examples/request-briefs.html
+- CSV kit marketplace listing copy:
+  https://xyjk0511.github.io/codex-services-portfolio/examples/csv-kit-marketplace-listing.html
 - Chinese service page:
   https://xyjk0511.github.io/codex-services-portfolio/zh-cn.html
 - Sample JSON summary:

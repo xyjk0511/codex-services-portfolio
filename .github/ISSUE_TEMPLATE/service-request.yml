@@ -38,6 +38,9 @@ body:
       label: Budget range
       options:
         - $99 repo audit
+        - $9-$19 self-serve CSV kit support question
+        - $79 express CSV audit
+        - $199 CSV reconciliation cleanup sprint
         - $50-$150 script or repair
         - $150-$250 workflow
         - $249 Codex workflow setup
