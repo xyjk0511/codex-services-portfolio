@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample AI App Rescue Audit Report</title>
+    <meta
+      name="description"
+      content="A sample fixed-scope AI app and repo rescue audit report showing diagnosis, patch plan, verification log, and safe intake boundaries."
+    >
+    <link rel="canonical" href="https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="article-page">
+      <p class="eyebrow">Sample deliverable</p>
+      <h1>AI app rescue audit report.</h1>
+      <p>
+        This is a public sample of the report format used for a fixed-scope
+        repo rescue or AI app stabilization pass. It shows the level of detail
+        a client can expect without exposing private code, credentials, or
+        customer data.
+      </p>
+
+      <section>
+        <h2>Project snapshot</h2>
+        <p>
+          The example project is a small AI support assistant with a web UI,
+          a Python API, and a background ingestion job. The owner reports that
+          setup is unreliable, one demo route crashes, and previous AI-assisted
+          edits left unclear verification steps.
+        </p>
+        <dl class="report-grid">
+          <div>
+            <dt>Business need</dt>
+            <dd>Make the demo runnable before a customer call.</dd>
+          </div>
+          <div>
+            <dt>Time box</dt>
+            <dd>One audit pass, then optional repair sprint.</dd>
+          </div>
+          <div>
+            <dt>Inputs</dt>
+            <dd>Sanitized repo link, failing command, expected demo route.</dd>
+          </div>
+          <div>
+            <dt>Output</dt>
+            <dd>Risk report, patch plan, verification commands, no-go list.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Diagnosis summary</h2>
+        <div class="finding-list">
+          <article>
+            <p class="severity high">High risk</p>
+            <h3>Setup depends on undocumented environment variables.</h3>
+            <p>
+              The app reads model and vector-store configuration at import
+              time, but the repository has no sample env file or startup guard.
+              A missing key fails as a generic server crash instead of a clear
+              setup error.
+            </p>
+          </article>
+          <article>
+            <p class="severity high">High risk</p>
+            <h3>The demo route has no smoke test.</h3>
+            <p>
+              The route used in sales demos is not covered by a fast test or
+              scripted smoke command, so every repair attempt relies on manual
+              clicking and can regress without a visible signal.
+            </p>
+          </article>
+          <article>
+            <p class="severity medium">Medium risk</p>
+            <h3>Agent instructions are missing.</h3>
+            <p>
+              The repo does not explain which files are generated, which
+              commands prove a change, or which actions require human approval.
+              This makes future Codex work slower and riskier than necessary.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Low-cost repair plan</h2>
+        <ol class="article-list">
+          <li>Add `AGENTS.md` with setup commands, test gates, generated-file boundaries, and no-go actions.</li>
+          <li>Add `.env.example` plus startup validation that returns a readable missing-config message.</li>
+          <li>Add one fast API smoke test for the demo route using fake model responses.</li>
+          <li>Add a `make smoke` or documented equivalent that proves the demo path without external credentials.</li>
+          <li>Record what was verified and what still requires client-side live testing.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Verification log sample</h2>
+        <pre><code>Setup: uv sync
+Static check: ruff check app tests -> passed
+Unit tests: pytest tests/test_demo_route.py -q -> 3 passed
+Smoke: APP_ENV=demo uv run python scripts/smoke_demo.py -> passed
+Not tested: production model key, live billing path, private customer data</code></pre>
+        <p>
+          The important part is not the exact toolchain. The deliverable names
+          the commands that were actually run and separates local proof from
+          anything that still depends on the client environment.
+        </p>
+      </section>
+
+      <section>
+        <h2>Client handoff</h2>
+        <p>
+          A paid audit would end with a short report, a patch plan, and an
+          optional fixed-price repair quote. If repair work is approved, the
+          next deliverable is a small pull request or patch bundle with the
+          same verification format.
+        </p>
+        <ul class="article-list">
+          <li>What changed and why it was low risk</li>
+          <li>Exact commands used for setup, tests, lint, build, or smoke checks</li>
+          <li>Known gaps that need client-side credentials or production access</li>
+          <li>Files or behaviors intentionally left untouched</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Safe intake brief</h2>
+        <p>
+          To request this kind of audit, send a sanitized repo link, the failing
+          command or route, the expected output, the deadline, and any platform
+          constraints. Do not send production secrets, private keys, customer
+          records, payment details, or instructions to bypass platform rules.
+        </p>
+      </section>
+
+      <section class="article-cta">
+        <h2>Need a report like this?</h2>
+        <p>
+          Open a quote request with the sanitized failure and the result you
+          want. I will confirm whether it fits a fixed-scope audit or a small
+          repair sprint.
+        </p>
+        <a class="button primary" href="https://github.com/xyjk0511/codex-services-portfolio/issues/1">Request a quote</a>
+        <a class="button secondary" href="../guides/codex-repo-readiness-checklist.html">Read the checklist</a>
+        <a class="button secondary" href="../index.html">Back to services</a>
+      </section>
+    </main>
+  </body>
+</html>

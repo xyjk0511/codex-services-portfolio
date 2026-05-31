@@ -24,6 +24,8 @@ repository.
   https://xyjk0511.github.io/codex-services-portfolio/guides/csv-reconciliation-checklist.html
 - Codex repo readiness checklist:
   https://xyjk0511.github.io/codex-services-portfolio/guides/codex-repo-readiness-checklist.html
+- AI app rescue sample report:
+  https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html
 - Sample JSON summary:
   https://xyjk0511.github.io/codex-services-portfolio/csv-kit/sample-output/summary.json
 - Sample mismatch CSV:
