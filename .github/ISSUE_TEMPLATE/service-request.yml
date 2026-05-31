@@ -5,7 +5,11 @@ body:
   - type: markdown
     attributes:
       value: |
-        Share only sanitized examples. Do not post credentials, private customer data, payment details, production secrets, or files that you are not allowed to share.
+        Share only sanitized examples. Do not post credentials, private customer data, payment details, production secrets, or files that you are not allowed to share. Do not request CAPTCHA bypass, account automation, spam, fake engagement, or platform-rule bypass work.
+
+        Sample deliverables:
+        - AI app rescue audit: https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html
+        - PR review / bug rescue report: https://xyjk0511.github.io/codex-services-portfolio/cases/pr-review-sample.html
   - type: textarea
     id: goal
     attributes:
@@ -23,6 +27,7 @@ body:
         - CSV / Excel automation
         - Bug / test / CI repair
         - PR review / maintenance sprint
+        - AI app / agent workflow rescue audit
         - Small AI / RAG prototype
         - Other small fixed-scope task
     validations:

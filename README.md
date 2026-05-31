@@ -4,7 +4,7 @@ Live portfolio:
 https://xyjk0511.github.io/codex-services-portfolio/
 
 Quote request:
-https://github.com/xyjk0511/codex-services-portfolio/issues/1
+https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service-request.yml
 
 ## Available Services
 
@@ -26,6 +26,8 @@ repository.
   https://xyjk0511.github.io/codex-services-portfolio/guides/codex-repo-readiness-checklist.html
 - AI app rescue sample report:
   https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html
+- PR review and bug rescue sample:
+  https://xyjk0511.github.io/codex-services-portfolio/cases/pr-review-sample.html
 - Sample JSON summary:
   https://xyjk0511.github.io/codex-services-portfolio/csv-kit/sample-output/summary.json
 - Sample mismatch CSV:

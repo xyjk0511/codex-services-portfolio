@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample PR Review and Bug Rescue Report</title>
+    <meta
+      name="description"
+      content="A sample fixed-scope PR review and bug rescue report showing findings, patch strategy, verification evidence, and safe intake boundaries."
+    >
+    <link rel="canonical" href="https://xyjk0511.github.io/codex-services-portfolio/cases/pr-review-sample.html">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="article-page">
+      <p class="eyebrow">Sample deliverable</p>
+      <h1>PR review and bug rescue report.</h1>
+      <p>
+        This sample shows the handoff format for a fixed-scope code review,
+        failing-test triage, or one-flow rescue job. It is designed for small
+        teams that need a concrete engineering decision, not a vague list of
+        style opinions.
+      </p>
+
+      <section>
+        <h2>Before</h2>
+        <p>
+          The example project has a pull request that claims to fix a broken
+          import flow. CI is red, the reviewer is not sure whether the patch is
+          safe, and the demo owner needs a yes/no decision before merging.
+        </p>
+        <dl class="report-grid">
+          <div>
+            <dt>Observed failure</dt>
+            <dd>`pytest tests/test_import_flow.py -q` fails on duplicate rows.</dd>
+          </div>
+          <div>
+            <dt>User impact</dt>
+            <dd>CSV imports can silently skip valid customer records.</dd>
+          </div>
+          <div>
+            <dt>Scope</dt>
+            <dd>Review the PR, isolate the defect, and propose a small fix.</dd>
+          </div>
+          <div>
+            <dt>Output</dt>
+            <dd>Findings, patch plan, verification log, and residual risk.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Review findings</h2>
+        <div class="finding-list">
+          <article>
+            <p class="severity high">High risk</p>
+            <h3>Duplicate detection runs before normalization.</h3>
+            <p>
+              The PR compares raw rows before trimming account IDs and lower-
+              casing email values. That means two records that should collapse
+              into one customer can pass through as separate rows.
+            </p>
+          </article>
+          <article>
+            <p class="severity medium">Medium risk</p>
+            <h3>The test covers the happy path only.</h3>
+            <p>
+              The added test proves a clean import, but it does not cover
+              whitespace, duplicate casing, empty optional fields, or malformed
+              dates. The bug can return after a refactor without a failing
+              signal.
+            </p>
+          </article>
+          <article>
+            <p class="severity medium">Medium risk</p>
+            <h3>The error message hides the bad row.</h3>
+            <p>
+              The current exception reports that import failed but does not
+              include the row number or normalized key, making support triage
+              slower than necessary.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2>Patch strategy</h2>
+        <ol class="article-list">
+          <li>Normalize row keys before duplicate detection.</li>
+          <li>Add regression tests for whitespace, casing, and repeated customer IDs.</li>
+          <li>Keep the patch inside the import module and avoid unrelated cleanup.</li>
+          <li>Add a concise error message that identifies the row and normalized key.</li>
+          <li>Run targeted tests first, then the repo's standard lint/test gate.</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Verification log sample</h2>
+        <pre><code>Reproduce: pytest tests/test_import_flow.py::test_duplicate_customer_rows -q -> failed before patch
+Targeted: pytest tests/test_import_flow.py -q -> 9 passed
+Lint: ruff check app/imports.py tests/test_import_flow.py -> passed
+Format: ruff format --check app/imports.py tests/test_import_flow.py -> passed
+Diff check: git diff --check -> clean
+Not tested: live production database, private customer export, billing workflow</code></pre>
+      </section>
+
+      <section>
+        <h2>Client handoff</h2>
+        <p>
+          A paid triage ends with a review comment or short report. A rescue
+          sprint ends with a patch, focused tests, and the same verification
+          evidence. The goal is to make the next maintainer decision obvious:
+          merge, request changes, or reject the risky direction.
+        </p>
+        <ul class="article-list">
+          <li>Findings ordered by severity</li>
+          <li>Small patch plan tied to the failing behavior</li>
+          <li>Commands run and exact result</li>
+          <li>Known gaps that need client-side credentials or production data</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Safe intake brief</h2>
+        <p>
+          Send a sanitized repo or PR link, the failing command, the expected
+          behavior, and any deadline. Do not send credentials, customer data,
+          payment details, private keys, or requests to bypass platform rules.
+        </p>
+      </section>
+
+      <section class="article-cta">
+        <h2>Need a review like this?</h2>
+        <p>
+          Open a quote request with the failing command or pull request link.
+          I can quote a review-only triage or a small fix-and-proof rescue.
+        </p>
+        <a class="button primary" href="https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service-request.yml">Request a quote</a>
+        <a class="button secondary" href="../cases/ai-app-rescue-sample-report.html">AI app sample</a>
+        <a class="button secondary" href="../index.html">Back to services</a>
+      </section>
+    </main>
+  </body>
+</html>
