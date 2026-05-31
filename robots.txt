@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xyjk0511.github.io/codex-services-portfolio/sitemap.xml
