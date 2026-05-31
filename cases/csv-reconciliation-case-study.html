@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSV Reconciliation Case Study</title>
+    <meta
+      name="description"
+      content="A sample fixed-scope CSV reconciliation deliverable with inputs, outputs, mismatch logic, verification evidence, and safe intake boundaries."
+    >
+    <link rel="canonical" href="https://xyjk0511.github.io/codex-services-portfolio/cases/csv-reconciliation-case-study.html">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="article-page">
+      <p class="eyebrow">Sample deliverable</p>
+      <h1>CSV reconciliation that ends with files, not guesswork.</h1>
+      <p>
+        This case study shows the output format for a small paid reconciliation
+        job: compare two exports by a shared key, identify missing rows,
+        duplicates, and field-level mismatches, then hand over a repeatable
+        command with sample reports.
+      </p>
+
+      <section>
+        <h2>Client situation</h2>
+        <p>
+          A founder has two monthly exports from different systems. The row
+          counts do not match, manual spreadsheet checks are slow, and the team
+          needs a clean report before updating customer records.
+        </p>
+        <dl class="report-grid">
+          <div>
+            <dt>Input A</dt>
+            <dd>System export with customer ID, status, plan, and amount.</dd>
+          </div>
+          <div>
+            <dt>Input B</dt>
+            <dd>Billing export with the same ID but different column names.</dd>
+          </div>
+          <div>
+            <dt>Rules</dt>
+            <dd>Match by ID, normalize whitespace, compare selected fields.</dd>
+          </div>
+          <div>
+            <dt>Output</dt>
+            <dd>Summary JSON plus missing-row, duplicate, and mismatch CSVs.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section>
+        <h2>Delivered files</h2>
+        <ul class="article-list">
+          <li>`reconcile.py` command-line script</li>
+          <li>`rules.yml` for key columns and field mapping</li>
+          <li>`summary.json` with counts for matched, missing, duplicate, and mismatched rows</li>
+          <li>`missing_in_left.csv` and `missing_in_right.csv`</li>
+          <li>`mismatches.csv` with key, field, left value, and right value</li>
+          <li>`duplicates.csv` for repeated keys that need manual review</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Verification log sample</h2>
+        <pre><code>Unit tests: PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 python -m pytest tests/test_reconcile.py -> passed
+Smoke run: python reconcile.py --left sample_data/source_a.csv --right sample_data/source_b.csv --rules rules.yml --out output/round9_csv_smoke
+Summary: matched_keys=3, missing_in_left=1, missing_in_right=1, mismatches=2, duplicates=1
+Not tested: live private exports, accounting decisions, production writes</code></pre>
+      </section>
+
+      <section>
+        <h2>What the buyer can inspect</h2>
+        <p>
+          The buyer does not need to trust a verbal claim. They can rerun the
+          command, open the output folder, and check whether the reported rows
+          match the sanitized sample. If the real export uses different names or
+          matching rules, the rules file changes without rewriting the whole
+          script.
+        </p>
+      </section>
+
+      <section>
+        <h2>Safe intake brief</h2>
+        <p>
+          Send one sanitized or fake-data sample from each source, the matching
+          key, fields to compare, and the preferred output format. Do not send
+          payment details, passwords, private customer records, API keys, or
+          production credentials.
+        </p>
+      </section>
+
+      <section class="article-cta">
+        <h2>Need this report for your exports?</h2>
+        <p>
+          Open a quote request with a fake-data sample and the matching rules.
+          I will quote the smallest fixed script or diagnostic first.
+        </p>
+        <a class="button primary" href="https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service-request.yml">Request a quote</a>
+        <a class="button secondary" href="../csv-kit/">CSV starter kit</a>
+        <a class="button secondary" href="../index.html">Back to services</a>
+      </section>
+    </main>
+  </body>
+</html>
