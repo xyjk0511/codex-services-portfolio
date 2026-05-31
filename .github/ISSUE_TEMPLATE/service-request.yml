@@ -1,0 +1,30 @@
+name: Service request
+description: Request a quote for a small automation, code repair, or prototype task.
+title: "[Quote] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share only sanitized examples. Do not post credentials, private customer data, payment details, production secrets, or files that you are not allowed to share.
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: What should the script, patch, or prototype do?
+      placeholder: Compare two CSV exports and produce a mismatch report.
+    validations:
+      required: true
+  - type: textarea
+    id: sample
+    attributes:
+      label: Sanitized input and expected output
+      description: Paste a tiny fake-data example or describe the input and desired output.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Deadline, platform, file type, language, budget range, or no-go requirements.
+    validations:
+      required: false
