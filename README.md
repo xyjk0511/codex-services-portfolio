@@ -16,6 +16,10 @@ https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service
 - Bug fix, test repair, and PR review: $79 triage, $199+ one-flow rescue
 - Small chatbot or RAG prototypes from provided content: $99 audit, $250+ prototype
 
+Best first request: include one sanitized or fake-data sample, the expected
+output, the failing command or current workflow, and the proof that would make
+the job done.
+
 The CSV kit page is a public preview only. The paid zip is not linked from this
 repository.
 
