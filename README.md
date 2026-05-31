@@ -9,6 +9,9 @@ https://xyjk0511.github.io/codex-services-portfolio/zh-cn.html
 Quote request:
 https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service-request.yml
 
+CSV kit / cleanup request:
+https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=csv-kit-request.yml
+
 ## Available Services
 
 - CSV Reconciliation Starter Kit: $19 list price, $9 launch option

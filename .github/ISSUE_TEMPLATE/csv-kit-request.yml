@@ -1,0 +1,78 @@
+name: CSV kit or cleanup request
+description: Request the CSV starter kit, an express audit, or a small reconciliation cleanup sprint.
+title: "[CSV] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for the CSV Reconciliation Starter Kit, the $79 express CSV audit, or the $199 cleanup sprint.
+
+        Share only sanitized or fake-data examples. Do not post credentials, private customer data, payment details, production secrets, bank statements, or files you are not allowed to share.
+  - type: dropdown
+    id: package
+    attributes:
+      label: What do you want?
+      options:
+        - $9 launch CSV starter kit
+        - $19 CSV starter kit list price
+        - $79 express CSV audit
+        - $199 CSV reconciliation cleanup sprint
+        - Not sure yet
+    validations:
+      required: true
+  - type: textarea
+    id: data_shape
+    attributes:
+      label: File shape or sample
+      description: If you only want the starter kit, write N/A. For audit or cleanup, describe your CSV/Excel columns or paste a tiny fake-data sample.
+      placeholder: |
+        left.csv columns: order_id, sku, quantity, total
+        right.csv columns: order_id, sku, quantity, total
+        Match on order_id + sku. Compare quantity and total.
+    validations:
+      required: false
+  - type: textarea
+    id: expected_output
+    attributes:
+      label: Expected output
+      description: If you only want the starter kit, write N/A. For audit or cleanup, describe what report or result should come out.
+      placeholder: I need missing rows, duplicate order IDs, mismatched totals, and a summary count.
+    validations:
+      required: false
+  - type: dropdown
+    id: file_type
+    attributes:
+      label: File type
+      options:
+        - CSV
+        - Excel
+        - CSV and Excel
+        - Shopify export
+        - Other spreadsheet export
+    validations:
+      required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      description: When do you need a first result?
+      placeholder: No hard deadline / within 24 hours / by Friday
+    validations:
+      required: false
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Anything that matters for quoting the smallest useful scope.
+      placeholder: Python only, no cloud upload, must run on Windows, sample has 10k rows, etc.
+    validations:
+      required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I removed credentials, private customer data, payment details, production secrets, and files I am not allowed to share.
+          required: true
+        - label: I understand this is data-cleanup automation, not accounting, tax, legal, financial, security, or income advice.
+          required: true
