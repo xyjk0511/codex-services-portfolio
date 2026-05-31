@@ -4,7 +4,7 @@ Live portfolio:
 https://xyjk0511.github.io/codex-services-portfolio/
 
 Quote request:
-https://github.com/xyjk0511/codex-services-portfolio/issues/new
+https://github.com/xyjk0511/codex-services-portfolio/issues/1
 
 ## Available Services
 
