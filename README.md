@@ -3,6 +3,9 @@
 Live portfolio:
 https://xyjk0511.github.io/codex-services-portfolio/
 
+Chinese service page:
+https://xyjk0511.github.io/codex-services-portfolio/zh-cn.html
+
 Quote request:
 https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service-request.yml
 
@@ -28,6 +31,8 @@ repository.
   https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html
 - PR review and bug rescue sample:
   https://xyjk0511.github.io/codex-services-portfolio/cases/pr-review-sample.html
+- Chinese service page:
+  https://xyjk0511.github.io/codex-services-portfolio/zh-cn.html
 - Sample JSON summary:
   https://xyjk0511.github.io/codex-services-portfolio/csv-kit/sample-output/summary.json
 - Sample mismatch CSV:
