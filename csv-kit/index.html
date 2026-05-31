@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSV Reconciliation Starter Kit for Python</title>
+    <meta
+      name="description"
+      content="A local Python kit for comparing CSV and Excel files, finding mismatches, missing rows, duplicates, and producing clean reports."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main>
+      <section class="hero" aria-labelledby="product-title">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Launch price USD 9</p>
+            <h1 id="product-title">CSV Reconciliation Starter Kit for Python</h1>
+            <p class="lede">
+              Compare two CSV or Excel files by ID, then export missing-row,
+              duplicate, mismatch, JSON, and optional Excel reports.
+            </p>
+            <div class="actions" aria-label="Product actions">
+              <a class="button primary" href="#purchase">
+                Get the kit
+              </a>
+              <a class="button secondary" href="sample-output/summary.json">
+                View sample report
+              </a>
+            </div>
+          </div>
+
+          <div class="report-visual" aria-label="Example reconciliation report preview">
+            <div class="report-topline">
+              <span>reconciliation_demo</span>
+              <strong>passed sample run</strong>
+            </div>
+            <div class="metric-strip">
+              <div>
+                <span>Matched keys</span>
+                <strong>3</strong>
+              </div>
+              <div>
+                <span>Mismatches</span>
+                <strong>2</strong>
+              </div>
+              <div>
+                <span>Duplicates</span>
+                <strong>1</strong>
+              </div>
+            </div>
+            <div class="diff-table" role="table" aria-label="Mismatch preview">
+              <div role="row" class="head">
+                <span role="columnheader">id</span>
+                <span role="columnheader">field</span>
+                <span role="columnheader">left</span>
+                <span role="columnheader">right</span>
+              </div>
+              <div role="row">
+                <span>1003</span>
+                <span>status</span>
+                <span>paid</span>
+                <span>pending</span>
+              </div>
+              <div role="row">
+                <span>1004</span>
+                <span>amount</span>
+                <span>49.00</span>
+                <span>59.00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof-band" aria-label="Proof points">
+        <div>
+          <span class="label">Runs locally</span>
+          <strong>No paid API key</strong>
+        </div>
+        <div>
+          <span class="label">Inputs</span>
+          <strong>CSV, XLSX, XLSM</strong>
+        </div>
+        <div>
+          <span class="label">Outputs</span>
+          <strong>CSV, JSON, XLSX</strong>
+        </div>
+        <div>
+          <span class="label">Verified</span>
+          <strong>v1: 11 tests, sample JSON and CSV outputs</strong>
+        </div>
+      </section>
+
+      <section id="purchase" class="purchase-note" aria-label="Purchase note">
+        <div>
+          <p class="eyebrow">Checkout-ready preview</p>
+          <h2>Connect this page to Ko-fi or Gumroad before taking payment.</h2>
+        </div>
+        <p>
+          The paid zip is not linked from this public preview. Use the sample
+          report to inspect the output, then publish the kit through a checkout
+          platform or use the services page for a fixed-scope adaptation request.
+        </p>
+      </section>
+
+      <section class="details">
+        <div class="section-heading">
+          <p class="eyebrow">What buyers get</p>
+          <h2>A practical starter kit, not another empty template.</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <h3>Readable source</h3>
+            <p>
+              A single Python script with sample inputs, a small rules file, and
+              plain output folders that are easy to inspect.
+            </p>
+          </article>
+          <article>
+            <h3>Operator-friendly reports</h3>
+            <p>
+              Missing records, duplicate IDs, field mismatches, and summary
+              counts are exported as files a non-developer can review.
+            </p>
+          </article>
+          <article>
+            <h3>Shopify audit bonus</h3>
+            <p>
+              Includes a bonus product CSV checker for duplicate SKUs, empty
+              descriptions, missing alt text, and SEO field gaps. Unofficial;
+              not affiliated with Shopify.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="demo">
+        <div class="section-heading">
+          <p class="eyebrow">Run the sample</p>
+          <h2>One command produces the included report files.</h2>
+        </div>
+        <pre><code>python reconcile.py --left sample_data/source_a.csv --right sample_data/source_b.csv --rules rules.yml --out output/reconciliation_demo</code></pre>
+      </section>
+
+      <section class="buyer-boundary">
+        <div>
+          <p class="eyebrow">Clear support boundary</p>
+          <h2>Self-serve code kit.</h2>
+        </div>
+        <p>
+          Includes setup instructions, sample data, and example output. Custom
+          integration, accounting advice, tax advice, and guaranteed business
+          outcomes are not included. Digital-download refunds and support should
+          follow the checkout platform's published policy.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>

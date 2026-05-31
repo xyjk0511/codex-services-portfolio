@@ -1,0 +1,3 @@
+customer_id,field,left,right
+C002,email,user_b_old,user_b_new
+C003,amount,42.00,40.00

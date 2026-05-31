@@ -1,0 +1,9 @@
+{
+  "left_rows": 5,
+  "right_rows": 4,
+  "matched_keys": 3,
+  "missing_in_left": 1,
+  "missing_in_right": 1,
+  "mismatches": 2,
+  "duplicates": 1
+}
