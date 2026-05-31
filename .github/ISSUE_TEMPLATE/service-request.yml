@@ -7,6 +7,8 @@ body:
       value: |
         Share only sanitized examples. Do not post credentials, private customer data, payment details, production secrets, or files that you are not allowed to share. Do not request CAPTCHA bypass, account automation, spam, fake engagement, or platform-rule bypass work.
 
+        This public issue is for sanitized pre-scope only. If the task fits, I reply with a fixed scope, price, timeline, and platform-native payment path. Work starts after payment. Private repo or data access is handled only after fixed-scope agreement and payment, if needed.
+
         Sample deliverables:
         - AI app rescue audit: https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html
         - PR review / bug rescue report: https://xyjk0511.github.io/codex-services-portfolio/cases/pr-review-sample.html
@@ -21,28 +23,29 @@ body:
   - type: dropdown
     id: service_type
     attributes:
-      label: Service type
+      label: Preferred fixed package
       options:
-        - Codex repo readiness / AGENTS.md setup
-        - CSV / Excel automation
-        - Bug / test / CI repair
-        - PR review / maintenance sprint
-        - AI app / agent workflow rescue audit
-        - Small AI / RAG prototype
+        - CSV / Excel script or repair ($50-$150)
+        - Bug / CI triage ($79)
+        - Repo readiness audit ($99)
+        - One-flow code rescue ($199+)
+        - Codex workflow setup ($249)
+        - CI / PR verification workflow ($499)
+        - AI workflow audit ($99)
+        - Small AI / RAG prototype ($250+)
         - Other small fixed-scope task
     validations:
       required: true
   - type: dropdown
     id: budget
     attributes:
-      label: Budget range
+      label: Budget / package confirmation
       options:
-        - $99 repo audit
         - $9-$19 self-serve CSV kit support question
-        - $79 express CSV audit
-        - $199 CSV reconciliation cleanup sprint
         - $50-$150 script or repair
-        - $150-$250 workflow
+        - $79 bug / CI triage
+        - $99 audit
+        - $199+ one-flow rescue or cleanup sprint
         - $249 Codex workflow setup
         - $499 CI / PR verification workflow
         - $250+ prototype
@@ -52,8 +55,8 @@ body:
   - type: textarea
     id: sample
     attributes:
-      label: Sanitized input and expected output
-      description: Paste a tiny fake-data example or describe the input and desired output.
+      label: Sanitized sample, repo link, failing command, or expected output
+      description: Paste a tiny fake-data example, public repo link, failing command, or the desired output. Do not post secrets or private production data.
     validations:
       required: true
   - type: input
