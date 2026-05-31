@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Copy-Paste Request Briefs</title>
+    <meta
+      name="description"
+      content="Sanitized copy-paste request briefs for CSV automation, bug and CI repair, Codex repo readiness, and small AI prototypes."
+    >
+    <link rel="canonical" href="https://xyjk0511.github.io/codex-services-portfolio/examples/request-briefs.html">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="article-page">
+      <p class="eyebrow">Intake examples</p>
+      <h1>Copy a brief, replace the sample details.</h1>
+      <p>
+        Use one of these as a safe starting point for a quote request. Keep it
+        sanitized: no passwords, API keys, customer records, production dumps,
+        payment details, or files you are not allowed to share.
+      </p>
+
+      <section>
+        <h2>CSV or Excel cleanup</h2>
+        <pre><code>Goal:
+Compare two exports and generate a reconciliation report.
+
+Inputs:
+- old_export.csv
+- new_export.csv
+
+Matching key:
+- order_id
+
+Fields to compare:
+- amount
+- status
+- updated_at
+
+Expected output:
+- summary.json
+- mismatches.csv
+- missing_old.csv
+- missing_new.csv
+- duplicates.csv
+
+Rules:
+- Trim whitespace.
+- Compare status case-insensitively.
+- Compare amount as a decimal number.
+- Treat blank updated_at as missing.
+
+Deadline:
+- Need first version by [date].
+
+Budget range:
+- [range]</code></pre>
+      </section>
+
+      <section>
+        <h2>Bug, test, or CI repair</h2>
+        <pre><code>Goal:
+Fix the failing test or CI job without changing unrelated behavior.
+
+Repo:
+- [public repo URL or private repo access note]
+
+Failing command:
+- [command]
+
+Observed result:
+- [short error excerpt]
+
+Expected result:
+- [what should pass or happen]
+
+Files or route involved:
+- [path, test, component, endpoint, or workflow]
+
+Constraints:
+- Keep existing public API behavior.
+- Add or update the smallest useful regression test.
+
+Budget range:
+- [range]</code></pre>
+      </section>
+
+      <section>
+        <h2>Codex repo readiness audit</h2>
+        <pre><code>Goal:
+Make this repo easier and safer to modify with Codex or another coding agent.
+
+Repo:
+- [repo URL]
+
+What is hard today:
+- setup commands are unclear
+- tests are flaky or undocumented
+- generated files are easy to edit by mistake
+- risky areas need explicit no-go rules
+
+Expected output:
+- AGENTS.md or contributor guidance
+- command map for setup/test/lint/build
+- risk and ownership notes
+- verification checklist
+
+Constraints:
+- Do not change production behavior unless separately approved.
+- Do not add dependencies without agreement.
+
+Budget range:
+- [range]</code></pre>
+      </section>
+
+      <section>
+        <h2>Small AI workflow prototype</h2>
+        <pre><code>Goal:
+Build a narrow prototype using the content I provide.
+
+Inputs:
+- [docs, FAQ, policy text, sample tickets, or public pages]
+
+User workflow:
+- [who uses it and what question/action they need]
+
+Expected output:
+- runnable demo or script
+- short README
+- sample input/output
+- verification notes
+
+Constraints:
+- No private credentials in the repo.
+- Use only content I am allowed to share.
+- Keep the prototype narrow; no production deployment yet.
+
+Budget range:
+- [range]</code></pre>
+      </section>
+
+      <section class="article-cta">
+        <h2>Ready to send a sanitized request?</h2>
+        <p>
+          Paste one brief into the structured issue form and replace the sample
+          placeholders. Public requests should contain scope only.
+        </p>
+        <a class="button primary" href="https://github.com/xyjk0511/codex-services-portfolio/issues/new?template=service-request.yml">
+          Request a quote
+        </a>
+        <a class="button secondary" href="../">
+          Back to services
+        </a>
+      </section>
+    </main>
+  </body>
+</html>

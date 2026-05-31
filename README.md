@@ -31,6 +31,8 @@ repository.
   https://xyjk0511.github.io/codex-services-portfolio/cases/ai-app-rescue-sample-report.html
 - PR review and bug rescue sample:
   https://xyjk0511.github.io/codex-services-portfolio/cases/pr-review-sample.html
+- Copy-paste request briefs:
+  https://xyjk0511.github.io/codex-services-portfolio/examples/request-briefs.html
 - Chinese service page:
   https://xyjk0511.github.io/codex-services-portfolio/zh-cn.html
 - Sample JSON summary:
