@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSV Reconciliation Checklist for Small Teams</title>
+    <meta
+      name="description"
+      content="A practical checklist for comparing two CSV or Excel exports, catching missing rows, duplicates, and field mismatches before reporting."
+    >
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://xyjk0511.github.io/codex-services-portfolio/guides/csv-reconciliation-checklist.html">
+    <meta property="og:title" content="CSV Reconciliation Checklist for Small Teams">
+    <meta property="og:description" content="A practical CSV and Excel reconciliation checklist with a copy-paste brief for requesting a fixed-scope automation script.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://xyjk0511.github.io/codex-services-portfolio/guides/csv-reconciliation-checklist.html">
+    <meta property="og:image" content="https://xyjk0511.github.io/codex-services-portfolio/assets/csv-kit-cover-1600x900.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="CSV Reconciliation Checklist for Small Teams">
+    <meta name="twitter:description" content="A practical checklist for catching missing rows, duplicates, and mismatches in CSV or Excel exports.">
+    <meta name="twitter:image" content="https://xyjk0511.github.io/codex-services-portfolio/assets/csv-kit-cover-1600x900.png">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main>
+      <article class="article-page">
+        <a class="text-link" href="../index.html">Back to services</a>
+        <p class="eyebrow">CSV and Excel automation</p>
+        <h1>CSV reconciliation checklist for small teams.</h1>
+        <p class="lede">
+          Use this when two exports should agree but the totals, row counts, or
+          field values do not line up. The goal is a repeatable script, not a
+          manual spreadsheet hunt.
+        </p>
+
+        <section>
+          <h2>1. Define the matching key</h2>
+          <p>
+            Pick the field that identifies the same record in both files:
+            customer ID, order ID, SKU, invoice number, or transaction ID. If
+            there is no stable key, create one from a small set of fields and
+            document the tradeoff.
+          </p>
+        </section>
+
+        <section>
+          <h2>2. Normalize before comparing</h2>
+          <p>
+            Trim whitespace, standardize casing, parse dates into one format,
+            and compare numbers as numbers. Many false mismatches come from
+            formatting differences rather than actual data differences.
+          </p>
+        </section>
+
+        <section>
+          <h2>3. Report four failure types separately</h2>
+          <ul class="article-list">
+            <li>Rows missing from the left export.</li>
+            <li>Rows missing from the right export.</li>
+            <li>Duplicate keys that make comparison ambiguous.</li>
+            <li>Field mismatches for records that exist in both files.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Keep the output simple</h2>
+          <p>
+            A useful first version usually needs only <code>summary.json</code>,
+            <code>mismatches.csv</code>, <code>missing_left.csv</code>,
+            <code>missing_right.csv</code>, and <code>duplicates.csv</code>.
+            Add Excel output only when someone needs to review the report
+            manually.
+          </p>
+        </section>
+
+        <section>
+          <h2>Copy-paste brief</h2>
+          <pre><code>Goal:
+Compare two CSV exports and generate a reconciliation report.
+
+Files:
+- source_a.csv
+- source_b.csv
+
+Matching key:
+- customer_id
+
+Fields to compare:
+- email
+- amount
+- status
+
+Output:
+- summary.json
+- mismatches.csv
+- missing_left.csv
+- missing_right.csv
+- duplicates.csv
+
+Rules:
+- Trim whitespace.
+- Compare email case-insensitively.
+- Compare amount as a decimal number.
+- Treat blank status as missing.</code></pre>
+        </section>
+
+        <section class="article-cta">
+          <h2>Need this turned into a script?</h2>
+          <p>
+            Open a public quote request with sanitized sample rows and the
+            expected output shape. Do not post credentials, private customer
+            data, payment details, or production secrets.
+          </p>
+          <a class="button primary" href="https://github.com/xyjk0511/codex-services-portfolio/issues/1">
+            Request a quote
+          </a>
+          <a class="button secondary" href="../csv-kit/index.html">
+            See sample output
+          </a>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>

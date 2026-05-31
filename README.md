@@ -19,6 +19,8 @@ repository.
 
 - CSV kit preview:
   https://xyjk0511.github.io/codex-services-portfolio/csv-kit/
+- CSV reconciliation checklist:
+  https://xyjk0511.github.io/codex-services-portfolio/guides/csv-reconciliation-checklist.html
 - Sample JSON summary:
   https://xyjk0511.github.io/codex-services-portfolio/csv-kit/sample-output/summary.json
 - Sample mismatch CSV:
