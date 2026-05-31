@@ -186,7 +186,7 @@ h2 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
@@ -208,6 +208,10 @@ h2 {
 
 .service-card:nth-child(3) {
   border-top-color: var(--gold);
+}
+
+.service-card:nth-child(4) {
+  border-top-color: var(--green);
 }
 
 .service-card h3 {

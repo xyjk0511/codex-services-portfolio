@@ -1,5 +1,5 @@
 name: Service request
-description: Request a quote for a small automation, code repair, or prototype task.
+description: Request a quote for a Codex workflow setup, small automation, code repair, or prototype task.
 title: "[Quote] "
 body:
   - type: markdown
@@ -10,8 +10,8 @@ body:
     id: goal
     attributes:
       label: Goal
-      description: What should the script, patch, or prototype do?
-      placeholder: Compare two CSV exports and produce a mismatch report.
+      description: What should the audit, script, patch, or prototype do?
+      placeholder: Make this repo safer for Codex changes, or compare two CSV exports and produce a mismatch report.
     validations:
       required: true
   - type: dropdown
@@ -19,8 +19,10 @@ body:
     attributes:
       label: Service type
       options:
+        - Codex repo readiness / AGENTS.md setup
         - CSV / Excel automation
         - Bug / test / CI repair
+        - PR review / maintenance sprint
         - Small AI / RAG prototype
         - Other small fixed-scope task
     validations:
@@ -30,9 +32,11 @@ body:
     attributes:
       label: Budget range
       options:
-        - $49 diagnostic
+        - $99 repo audit
         - $50-$150 script or repair
         - $150-$250 workflow
+        - $249 Codex workflow setup
+        - $499 CI / PR verification workflow
         - $250+ prototype
         - Not sure yet
     validations:
@@ -44,6 +48,30 @@ body:
       description: Paste a tiny fake-data example or describe the input and desired output.
     validations:
       required: true
+  - type: input
+    id: repo_url
+    attributes:
+      label: Repository URL
+      description: Public repo URL, or say private/not public if you only want a readiness checklist.
+      placeholder: https://github.com/org/repo
+    validations:
+      required: false
+  - type: textarea
+    id: failing_commands
+    attributes:
+      label: Current commands or failure
+      description: Paste the failing test/lint/build command and the shortest useful error excerpt.
+      placeholder: npm test fails in packages/app/src/foo.test.ts
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What proof would make this job done?
+      placeholder: The failing test passes, npm run build passes, and the README explains the command.
+    validations:
+      required: false
   - type: input
     id: deadline
     attributes:

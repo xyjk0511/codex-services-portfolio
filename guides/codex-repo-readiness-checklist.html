@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Codex Repo Readiness Checklist</title>
+    <meta
+      name="description"
+      content="A practical checklist for making a repository safer and easier to modify with Codex or another coding agent."
+    >
+    <link rel="canonical" href="https://xyjk0511.github.io/codex-services-portfolio/guides/codex-repo-readiness-checklist.html">
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <main class="article-page">
+      <p class="eyebrow">Guide</p>
+      <h1>Codex repo readiness checklist.</h1>
+      <p>
+        A coding agent works best when the repository tells it what matters,
+        how to verify changes, and where not to make risky guesses. This is the
+        checklist I use before a repo becomes a good candidate for fixed-scope
+        AI-assisted repair work.
+      </p>
+
+      <section>
+        <h2>1. Define the command map</h2>
+        <p>
+          Put the real setup, test, lint, typecheck, build, and smoke commands
+          in one place. Include the package manager and expected runtime
+          version. A command map prevents slow discovery and makes every patch
+          easier to verify.
+        </p>
+        <pre><code>Setup: npm install
+Tests: npm test -- --runInBand
+Lint: npm run lint
+Build: npm run build
+Smoke: npm run dev, then open /health</code></pre>
+      </section>
+
+      <section>
+        <h2>2. Write the agent contract</h2>
+        <p>
+          Add an AGENTS.md or contributor note that states coding style,
+          ownership boundaries, verification expectations, no-go areas, and
+          how to handle generated files. This is especially useful when more
+          than one agent or developer touches the repo.
+        </p>
+        <ul class="article-list">
+          <li>What files are source of truth?</li>
+          <li>Which generated files should not be hand edited?</li>
+          <li>Which tests prove a normal patch?</li>
+          <li>Which actions require maintainer approval?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Make failures reproducible</h2>
+        <p>
+          A good repair request includes the failing command, the observed
+          error, the expected behavior, and a small input or route that triggers
+          the bug. Without that, the first paid hour becomes archaeology.
+        </p>
+      </section>
+
+      <section>
+        <h2>4. Keep secrets out of the workflow</h2>
+        <p>
+          Use sample env files and fake fixtures. Do not send production
+          credentials, customer data, private keys, payment details, or
+          anything you are not allowed to share. If live credentials are needed,
+          the work is not a fixed-scope public intake job.
+        </p>
+      </section>
+
+      <section>
+        <h2>5. Require proof with every patch</h2>
+        <p>
+          The final handoff should say what changed, what command proved it,
+          and what was not tested. This keeps Codex-assisted work closer to a
+          reviewable engineering change than a vague code dump.
+        </p>
+      </section>
+
+      <section class="article-cta">
+        <h2>Want this applied to a repo?</h2>
+        <p>
+          Send a sanitized repo link, failing command, and target outcome. I
+          can turn it into a short readiness report, AGENTS.md patch, and
+          verification checklist.
+        </p>
+        <a class="button primary" href="https://github.com/xyjk0511/codex-services-portfolio/issues/1">Request a quote</a>
+        <a class="button secondary" href="../index.html">Back to services</a>
+      </section>
+    </main>
+  </body>
+</html>
