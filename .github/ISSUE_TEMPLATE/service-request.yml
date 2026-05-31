@@ -14,6 +14,29 @@ body:
       placeholder: Compare two CSV exports and produce a mismatch report.
     validations:
       required: true
+  - type: dropdown
+    id: service_type
+    attributes:
+      label: Service type
+      options:
+        - CSV / Excel automation
+        - Bug / test / CI repair
+        - Small AI / RAG prototype
+        - Other small fixed-scope task
+    validations:
+      required: true
+  - type: dropdown
+    id: budget
+    attributes:
+      label: Budget range
+      options:
+        - $49 diagnostic
+        - $50-$150 script or repair
+        - $150-$250 workflow
+        - $250+ prototype
+        - Not sure yet
+    validations:
+      required: true
   - type: textarea
     id: sample
     attributes:
@@ -21,6 +44,23 @@ body:
       description: Paste a tiny fake-data example or describe the input and desired output.
     validations:
       required: true
+  - type: input
+    id: deadline
+    attributes:
+      label: Deadline
+      description: When do you need a first result?
+      placeholder: No hard deadline / by Friday / within 1 week
+    validations:
+      required: false
+  - type: checkboxes
+    id: deliverables
+    attributes:
+      label: Expected deliverables
+      options:
+        - label: Runnable script or small tool
+        - label: Patch or pull request
+        - label: README / setup notes
+        - label: Sample output or verification notes
   - type: textarea
     id: constraints
     attributes:
@@ -28,3 +68,10 @@ body:
       description: Deadline, platform, file type, language, budget range, or no-go requirements.
     validations:
       required: false
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety confirmation
+      options:
+        - label: I removed credentials, private customer data, payment details, production secrets, and files I am not allowed to share.
+          required: true
